@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js" defer></script>
+<script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" defer></script>
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+<body>
+    <div id="app"></div>
+    <script type="text/babel">
+
+        function formatDate(date) {
+          return date.toLocaleDateString();
+        }
+        
+        function Avatar(props) {
+          return (
+            <img
+              className="Avatar"
+              src={props.user.avatarUrl}
+              alt={props.user.name}
+            />
+          );
+        }
+        
+        function UserInfo(props) {
+          return (
+            <div className="UserInfo">
+              <Avatar user={props.user} />
+              <div className="UserInfo-name">{props.user.name}</div>
+            </div>
+          );
+        }
+        
+        function Comment(props) {
+          return (
+            <div className="Comment">
+              <UserInfo user={props.author} />
+              <div className="Comment-text">{props.text}</div>
+              <div className="Comment-date">
+                {formatDate(props.date)}
+              </div>
+            </div>
+          );
+        }
+        
+        const profile = {
+          date: new Date(),
+          text: "I hope you enjoy learning React!",
+          author: {
+            name: 'el yatim omar',
+           
+          },
+        };
+        ReactDOM.render(
+          <Comment
+            date={profile.date}
+            text={profile.text}
+            author={profile.author}
+          />,
+          document.getElementById('app')
+        );
+        
+        
+        </script>
+     </body>
+     </html>
