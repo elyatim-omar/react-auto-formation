@@ -13,11 +13,11 @@
     <div id="app"></div>
     <script type="text/babel">
 
-        function formatDate(date) {
+        function theDate(date) {
           return date.toLocaleDateString();
         }
         
-        function Avatar(props) {
+        function Picture(props) {
           return (
             <img
               className="Avatar"
@@ -27,22 +27,22 @@
           );
         }
         
-        function UserInfo(props) {
+        function Utilisateur(props) {
           return (
             <div className="UserInfo">
-              <Avatar user={props.user} />
+              <Picture user={props.user} />
               <div className="UserInfo-name">{props.user.name}</div>
             </div>
           );
         }
         
-        function Comment(props) {
+        function Me(props) {
           return (
             <div className="Comment">
-              <UserInfo user={props.author} />
+              <Utilisateur user={props.author} />
               <div className="Comment-text">{props.text}</div>
               <div className="Comment-date">
-                {formatDate(props.date)}
+                {theDate(props.date)}
               </div>
             </div>
           );
@@ -53,11 +53,11 @@
           text: "I hope you enjoy learning React!",
           author: {
             name: 'el yatim omar',
-           
+            avatarUrl:  'https://fr.gravatar.com/userimage/207132761/c1a1a5e4a18f5464cf56ed1e4dbf24c8.jpg?size=200'
           },
         };
         ReactDOM.render(
-          <Comment
+          <Me
             date={profile.date}
             text={profile.text}
             author={profile.author}

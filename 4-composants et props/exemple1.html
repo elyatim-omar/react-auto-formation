@@ -14,10 +14,11 @@
     
     <script type="text/babel">
     
-    function Welcome(props) {
-      return <h1>Bonjour, {props.name}</h1>;
+    function Bonjour(props) {
+      return <h1>Bonjour, {props.name} {props.email} </h1>;
     }
-     ReactDOM.render(<Welcome name = "Elyatim"/>, document.getElementById('app'));
+     ReactDOM.render(<Bonjour name = "Elyatim" email = "elyatim@gmail.com" />, document.getElementById('app'));
     </script>
     
-    </body></html>
+    </body>
+    </html>

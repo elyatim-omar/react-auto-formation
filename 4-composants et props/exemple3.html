@@ -12,17 +12,17 @@
 <body>
     <div id="app"></div>
  <script type="text/babel">
-      class Welcome extends React.Component {
+      class Bonjour extends React.Component {
       render() {
-        return <h1>Welcome, {this.props.name}</h1>;
+        return <h1>Welcome, {this.props.name} : {this.props.email}</h1>;
       }
     }
     function App() {
   return (
     <div>
-      <Welcome name="El yatim" />
-      <Welcome name="Bouchlouch" />
-      <Welcome name="Akhrif" />
+      <Bonjour name="El yatim" email = "elyatim@gmail.com" />
+      <Bonjour name="Bouchlouch" email = "bouchlouch@gmail.com" />
+      <Bonjour name="Akhrif" email = "Akhrif@gmail.com" />
     </div>
   );
 }
